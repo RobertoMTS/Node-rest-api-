@@ -1,0 +1,8 @@
+module.exports = [{
+ id: 1,
+ name: 'pizza'
+},{
+  id: 2, 
+  name: 'Soda'
+} 
+]
