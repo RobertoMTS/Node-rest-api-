@@ -1,4 +1,4 @@
-module.exports = [{
+const produts = [{
  id: 1,
  name: 'pizza'
 },{
@@ -6,3 +6,5 @@ module.exports = [{
   name: 'Soda'
 } 
 ]
+
+export default produts; 

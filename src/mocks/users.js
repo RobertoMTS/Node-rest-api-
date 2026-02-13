@@ -1,4 +1,4 @@
-module.exports = [
+const users = [
   {
     id: 1, 
     nome: 'Roberto Mateus'
@@ -10,3 +10,5 @@ module.exports = [
     nome: 'Timotio'
   }
 ];
+
+export default users;

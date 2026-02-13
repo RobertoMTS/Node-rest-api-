@@ -1,7 +1,7 @@
-const users = require('../mocks/users');
+import users from '../mocks/users.js'
 
-module.exports = {
-  getUsers(response){
+const userss = {
+  index(response){
     response.writeHead(
       200, 
       {'content-type': 'application/json'}
@@ -10,3 +10,5 @@ module.exports = {
 
   } 
 }
+
+export default userss;

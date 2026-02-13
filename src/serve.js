@@ -1,21 +1,20 @@
-const http = require('node:http');  
-const routes = require('./routes'); 
+import http  from 'node:http';  
+import routes  from'./routes.js';
+import erros  from './errors.js'; 
+import url from 'node:url'; 
 
 http.createServer(function (request, response) {
- 
 
-  const route = routes.find(function(r){
-    return request.url === r.endpoint; 
+  const parsed_url = url.parse(request.url); 
+  console.log(parsed_url)
 
+
+  const router = routes.find(function(route){
+    return request.url === route.endpoint; 
   });
-
-  if (route) { 
-    route.handler(response); 
+  if (router) { 
+    router.handler(response); 
     return; 
   }
-
-  response.writeHead(
-    200,
-    { 'content-type': 'text/http;charset=utf-8' });
-  response.end('<h1>Hello Client</h1>');
+  erros.notFound(response);
 }).listen(3000); 

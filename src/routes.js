@@ -1,10 +1,18 @@
-const UserController = require('./controllers/UserControllers');
-const routes = require('./mocks/users'); 
+import ProductController from './controllers/ProductController.js'
+import UserController from './controllers/UserControllers.js'
 
 
-module.exports = [
+
+
+
+const routes = [
   {
     endpoint: '/users',
-    handler: UserController.getUsers
+    handler: UserController.index
+  },{
+    endpoint: '/products', 
+    handler: ProductController.index
   }
 ];
+
+export default routes; 
